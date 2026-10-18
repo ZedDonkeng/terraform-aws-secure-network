@@ -1,0 +1,11 @@
+output "vpc_id" { value = aws_vpc.secure.id }
+output "vpc_cidr" { value = aws_vpc.secure.cidr_block }
+output "availability_zones" { value = local.azs }
+output "public_subnet_ids" { value = aws_subnet.public[*].id }
+output "private_subnet_ids" { value = aws_subnet.private[*].id }
+output "public_route_table_id" { value = aws_route_table.public.id }
+output "private_route_table_id" { value = aws_route_table.private.id }
+output "vpc_flow_log_id" { value = aws_flow_log.vpc.id }
+output "flow_logs_group" { value = aws_cloudwatch_log_group.vpc_flow_logs.name }
+output "frontend_security_group_id" { value = aws_security_group.public_https.id }
+output "internal_security_group_id" { value = aws_security_group.private_app.id }
